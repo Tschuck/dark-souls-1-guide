@@ -36,6 +36,7 @@ export class GuideService {
       const sheetData = this.electronService.xlsx.utils.sheet_to_json(workbook.Sheets[workbook.SheetNames[i]]);
       const area = {
         name: workbook.SheetNames[i],
+        id: i,
         quests: []
       };
 
@@ -45,12 +46,18 @@ export class GuideService {
         quest.quests = [];
 
         if (quest[level0]) {
+          quest.id = area.id + '.' + area.quests.length;
+          quest.name = quest[level0];
           area.quests.push(quest);
           queststack[0] = quest;
         } else if (quest[level1]) {
+          quest.id = queststack[0].id + '.' + queststack[0].quests.length;
+          quest.name = quest[level1];
           queststack[1] = quest;
           queststack[0].quests.push(quest);
         } else if (quest[level2]) {
+          quest.id = queststack[1].id + '.' + queststack[1].quests.length;
+          quest.name = quest[level2];
           queststack[1].quests.push(quest);
         }
       }
@@ -58,6 +65,20 @@ export class GuideService {
       guide.push(area);
     }
 
+    this.dataService.save('guide', JSON.stringify(guide));
+
     return guide;
+  }
+
+  loadCurrentGuide() {
+    return JSON.parse(this.dataService.load('guide'));
+
+    // const guidePath = this.dataService.load('guide-path');
+
+    // return this.loadGuide(guidePath);
+  }
+
+  setActivearea(index) {
+    this.dataService.save('active-guide-index', index);
   }
 }

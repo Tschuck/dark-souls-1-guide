@@ -1,0 +1,72 @@
+.app-guide {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+
+  width: 100%;
+  margin: auto;
+
+  background-color: rgba(0, 0, 0, 0.6);
+
+  .left-panel, .right-panel {
+    overflow-y: auto;
+
+    box-sizing: border-box;
+    height: 100%;
+  }
+
+  .left-panel {
+    width: 400px;
+    padding-top: 30px;
+
+    background-color: rgba(0, 0, 0, 0.2);
+
+    .area {
+      box-sizing: border-box;
+      padding: 10px 15px;
+
+      cursor: pointer;
+      transition: 100ms ease-out background-color;
+      vertical-align: middle;
+
+      color: #e5e5e5;
+      color: #ffffff;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+      &.active {
+        border-right: 5px solid #aeaeae;
+      }
+
+      &:first-child {
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      &:hover {
+        background-color: rgba(97, 95, 95, 0.5);
+      }
+    }
+  }
+
+  .right-panel {
+    width: 100%;
+    padding: 20px;
+
+    color: #ffffff;
+
+    .quest {
+      padding: 10px;
+
+      &.has-sub-quests {
+        padding-bottom: 0;
+      }
+
+      .quest {
+        margin-left: 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+<div class="app-guide">
+  <div class="left-panel">
+    <div class="area"
+      *ngFor="let area of guide; let i = index"
+      [class.active]="i === activeArea"
+      (click)="setActiveArea(i)">
+      {{ i + 1 }}. {{ area.name }}
+    </div>
+  </div>
+  <div class="right-panel">
+    <ng-template #recursiveList let-activeQuests>
+      <div class="quest"
+        *ngFor="let quest of activeQuests"
+        [class.has-sub-quests]="quest.quests.length !== 0"
+        (click)="toggleQuestId(quest)">
+        <input type="checkbox"
+          [disabled]="quest.quests.length !== 0" 
+          [(ngModel)]="solved[quest.id]">
+        <label>{{ quest.name }}</label>
+        <div *ngIf="quest.quests.length > 0">
+          <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: quest.quests }"></ng-container>
+        </div>
+      </div>
+    </ng-template>
+    <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: activeQuests }"></ng-container>
+  </div>
+</div>

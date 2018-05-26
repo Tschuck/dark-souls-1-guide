@@ -1,18 +1,18 @@
 {
-  "name": "dark-souls-1-wiki",
+  "name": "dark-souls-1-guide",
   "version": "1.0.0",
-  "description": "Dark Souls 1 Wiki",
-  "homepage": "https://github.com/maximegris/angular-electron",
+  "description": "Dark Souls 1 Guide",
   "author": {
-    "name": "Maxime GRIS",
-    "email": "maxime.gris@gmail.com"
+    "name": "Tschuck",
+    "email": "tobias.winkler@outlook.de"
   },
   "keywords": [
     "angular",
     "angular 5",
     "electron",
     "typescript",
-    "sass"
+    "sass",
+    "dark souls 1"
   ],
   "main": "main.js",
   "private": true,
