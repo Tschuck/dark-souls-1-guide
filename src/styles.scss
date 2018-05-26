@@ -1,0 +1,81 @@
+@import './scss/fonts';
+
+/* You can add global styles to this file, and also import other style files */
+html, body {
+  font-family: 'Open Sans', sans-serif;
+
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.margin-top {
+  margin-top: 10px;
+}
+
+.margin-bottom {
+  margin-bottom: 10px;
+}
+
+.margin-left {
+  margin-left: 10px;
+}
+
+.margin-right {
+  margin-right: 10px;
+}
+
+button {
+  font: inherit;
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
+
+  overflow: visible;
+
+  width: auto;
+  margin: 0;
+  padding: 0;
+
+  text-align: inherit;
+  /* inherit font & color from ancestor */
+
+  color: inherit;
+  border: none;
+  outline: none;
+  background: transparent;
+  /* Corrects inability to style clickable `input` types in iOS */
+
+  -webkit-appearance: none;
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+
+  /* Remove excess padding and border in Firefox 4+ */
+  &::-moz-focus-inner {
+    padding: 0;
+
+    border: 0;
+  }
+}
+
+button {
+  padding: 10px;
+
+  cursor: pointer;
+
+  border-radius: 5px;
+}
+
+button.primary {
+  transition: 500ms ease-out background-color;
+
+  background-color: #4c4c4c;
+
+  &:hover {
+    background-color: #878787;
+  }
+}

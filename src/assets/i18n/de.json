@@ -1,0 +1,7 @@
+{
+  "guide-select": {
+    "headline": "Guide auswählen",
+    "sub-text": "Es wurde noch kein Guide ausgewählt. Bitte wählen Sie eine <b>xlsx</b> Datei mit dem entsprechenden Vorgaben um fortzufahren.",
+    "file-select": "Datei auswählen"
+  }
+}

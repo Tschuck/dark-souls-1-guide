@@ -1,0 +1,12 @@
+<div class="guide-selector">
+  <div>
+    <h3>{{ 'guide-select.headline' | translate }}</h3>
+    <p class="sub-text" [innerHTML]="'guide-select.sub-text' | translate"></p>
+  </div>
+  
+  <div class="text-center">
+    <button class="primary" (click)="guideService.importGuide()">
+      {{ 'guide-select.file-select' | translate }}
+    </button>
+  </div>
+</div>
